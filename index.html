@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XF</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 class="logo">XF</h1>
+      <div id="user-area" class="user-area" hidden>
+        <span id="user-name" class="user-name"></span>
+        <button id="logout-btn" class="btn-ghost" type="button">ログアウト</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ログイン・新規登録 -->
+      <section id="auth-view" class="card" hidden>
+        <div class="tabs" role="tablist">
+          <button id="tab-login" class="tab active" type="button">ログイン</button>
+          <button id="tab-signup" class="tab" type="button">新規登録</button>
+        </div>
+        <form id="auth-form" class="auth-form">
+          <label id="username-field" hidden>
+            ユーザー名
+            <input id="username" type="text" maxlength="30" autocomplete="nickname" />
+          </label>
+          <label>
+            メールアドレス
+            <input id="email" type="email" required autocomplete="email" />
+          </label>
+          <label>
+            パスワード（6文字以上）
+            <input id="password" type="password" required minlength="6" autocomplete="current-password" />
+          </label>
+          <button id="auth-submit" class="btn" type="submit">ログイン</button>
+          <p id="auth-message" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <!-- 投稿フォーム -->
+      <section id="compose-view" class="card" hidden>
+        <form id="post-form">
+          <textarea id="post-content" rows="3" maxlength="280" placeholder="いまどうしてる？"></textarea>
+          <div class="compose-footer">
+            <span id="char-count" class="char-count">0 / 280</span>
+            <button id="post-submit" class="btn" type="submit" disabled>ポストする</button>
+          </div>
+          <p id="post-message" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <!-- タイムライン -->
+      <section>
+        <h2 class="section-title">タイムライン</h2>
+        <ul id="timeline" class="timeline"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

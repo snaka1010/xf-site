@@ -1,0 +1,9 @@
+# 環境変数（Supabase の URL・キー）は絶対にコミットしない
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+.DS_Store
+*.log
